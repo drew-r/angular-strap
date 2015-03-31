@@ -224,7 +224,7 @@ angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.helpers.dimensions'])
           safeDigest(scope);
           
           // Allow $digest to complete if in progress
-          $timeout(function() {
+          $window.setTimeout(function() {
               // Now, apply placement
               $tooltip.$applyPlacement();
 
@@ -251,7 +251,7 @@ angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.helpers.dimensions'])
               if(options.autoClose) {
                 bindAutoCloseEvents();
               }
-           });
+           }, 0);
         };
 
         function enterAnimateCallback() {
